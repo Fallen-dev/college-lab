@@ -12,7 +12,6 @@ class MatrixAddition {
         int x = sc.nextInt();
         System.out.print("Enter the number of rows: ");
         int y = sc.nextInt();
-        sc.close();
 
         if (m != x || n != y) {
             System.out.println("Addition not possible");
