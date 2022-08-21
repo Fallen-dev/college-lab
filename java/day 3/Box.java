@@ -31,8 +31,8 @@ class Box {
         Box b2 = new Box(5, 5, 3);
         Box b3 = new Box(6, 6, 5);
 
-        System.out.println("Box 1 volume = " + b1.volume());
-        System.out.println("Box 2 volume = " + b2.volume());
-        System.out.println("Box 3 volume = " + b3.volume());
+        b1.display("Box 1 volume = ");
+        b2.display("Box 2 volume = ");
+        b3.display("Box 3 volume = ");
     }
 }
