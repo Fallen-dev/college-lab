@@ -1,4 +1,4 @@
-class Employee {
+class Employee { // Output: MyShiftSupervisor.class
     String name, id, hiredOn;
 }
 
@@ -33,7 +33,7 @@ class ShiftSupervisor extends Employee {
 class MyShiftSupervisor {
     public static void main(String[] args) {
         new ShiftSupervisor()
-                .employee("Rick Astley", 0, "12/02/2005")
+                .employee("Alex", 0, "12/02/2005")
                 .salary(30000).display();
     }
 }

@@ -1,6 +1,6 @@
 import java.util.regex.Pattern;
 
-class Employee {
+class Employee { // Output: MyTeamLeader.class
     String name, id, hiredOn;
 }
 
@@ -65,7 +65,7 @@ class TeamLeader extends ProdunctionWorker {
 class MyTeamLeader {
     public static void main(String[] args) {
         TeamLeader tl = new TeamLeader();
-        tl.employee("John Doe", "999-D", "01.05.2012")
+        tl.employee("Peter", "999-D", "01.05.2012")
                 .shifting(1).payRate(3000.00).display();
         tl.bonus(1200).training(6, 6).displayTL();
     }
