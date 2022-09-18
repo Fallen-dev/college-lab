@@ -23,8 +23,11 @@ class PC {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        PC rectangle=new PC(12.5, 6.5);
-        PC square=new PC(22.3);
+        System.out.print("Enter height and width of rectangle: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        PC rectangle=new PC(a, b);
+        PC square=new PC(a);
         
         rectangle.display();
         square.display();

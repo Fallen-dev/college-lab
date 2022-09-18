@@ -12,13 +12,15 @@ class Triangle {
     double area() {
         return 0.5 * base * height;
     }
+}
+class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
     
         System.out.print("Enter the number of triangle: ");
         int n=sc.nextInt();
 
-        Triangle[] triangleArray=new Triangle[n];
+        Triangle[] triangleArray=new Triangle[n+1];
         
         double ans=0.0;//Taking initial as zero as area can't be negative!!
         int idx=1;
