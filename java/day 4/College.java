@@ -1,4 +1,4 @@
-class College { // output file = Main.class
+class College { // output file = MyCollege.class
     private String collegeName, address;
 
     College setCollegeDetails(String collegeName, String address) {
@@ -40,7 +40,7 @@ class Dept extends College {
     }
 }
 
-class Main {
+class MyCollege {
     public static void main(String[] args) {
         Dept dept = new Dept();
         dept.setCollegeDetails("RCCIIT", "CIT More, Beleghata").showCollegeDetails();
