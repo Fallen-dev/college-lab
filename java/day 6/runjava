@@ -1,0 +1,3 @@
+cd ./classFiles
+java $1
+cd ..
