@@ -1,7 +1,7 @@
 outdir=./classFiles
 
 compileFile() {
-    [ ! $1 ] && echo Missing java filename && exit
+    [ ! $1 ] && echo Missing java filename && return 1
     if [ -d $outdir ]; then
         javac $1 -d $outdir && echo "Compiled! File moved to $outdir"
     else # this part will run only for the first time running this program
@@ -11,7 +11,7 @@ compileFile() {
 }
 
 runJava() {
-    [ ! $1 ] && echo Missing java filename && exit
+    [ ! $1 ] && echo Missing java filename && return 1
     cd $outdir
     [ ! -z ${1#*.} ] && java ${1%%.*} || java $1
     cd ..
