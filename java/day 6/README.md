@@ -44,10 +44,10 @@ The class file will be moved to `classFile` folder automatically
 ./runjava WordCount
 ```
 
+> You don't need to add the _.class_ extension it will automatically add it if not
+
 ##### For help
 
 ```bash
 ./runjava -h
 ```
-
-> You don't need to add the _.class_ extension it will automatically add it if not
