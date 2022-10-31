@@ -1,3 +1,50 @@
-cd ./classFiles
-java $1
-cd ..
+outdir=./classFiles
+
+compileFile() {
+    [ ! $1 ] && echo Missing java filename && exit
+    if [ -d $outdir ]; then
+        javac $1 -d $outdir && echo "Compiled! File moved to $outdir"
+    else # this part will run only for the first time running this program
+        mkdir $outdir
+        javac $1 -d $outdir && echo "Compiled! File moved to $outdir"
+    fi
+}
+
+runJava() {
+    [ ! $1 ] && echo Missing java filename && exit
+    cd $outdir
+    [ ! -z ${1#*.} ] && java ${1%%.*} || java $1
+    cd ..
+}
+
+usage() {
+    while read -r line; do
+        echo $line
+    done << EOF
+    ### This file is created for the ease of compiling a java file and move it to the 'outdir'
+    ### The 'outdir' is the 'classFiles' folder
+    ### Rather than that this file has no use
+
+    USAGE:
+        1) To run this file ->
+        ./runjava.sh ARG FILENAME
+        
+        - FILENAME: The file name of the java file
+        - ARG: Takes one argument of either -c for compile or -h for help
+
+        2) To compile a java file ->
+        type ./runjava.sh file_name.java -c
+        The compiled class file will be moved to the 'outdir' (classFiles)
+
+        3) To run java (class) file ->
+        type ./runjava.sh file_name
+        *NOTE: .class extension is optional, program will add if not present on the argument
+EOF
+}
+
+[ $# -eq 0 ] && usage
+case $1 in
+    -c|--compile) compileFile $2;;
+    -h|--help|-*|--*) usage;;
+    *) runJava $1;;
+esac

@@ -1,4 +1,4 @@
-class LowerUpperToggle {
+class LowerUpperToggleCase {
     static StringBuffer toToggleCase(String string) {
         StringBuffer toggleCase = new StringBuffer();
 
