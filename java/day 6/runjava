@@ -1,12 +1,15 @@
-outdir=./classFiles
+#!/bin/bash
+version=1.0.4
+
+[ ! -e .outdir ] && outdir=classFiles || outdir=$(cat .outdir)
 
 compileFile() {
     [ ! $1 ] && echo Missing java filename && return 1
     if [ -d $outdir ]; then
-        javac $1 -d $outdir && echo "Compiled! File moved to $outdir"
+        javac $1 -d $outdir && echo "Compiled! '${1%%.*}.class' moved to '$outdir' folder"
     else # this part will run only for the first time running this program
         mkdir $outdir
-        javac $1 -d $outdir && echo "Compiled! File moved to $outdir"
+        javac $1 -d $outdir && echo "Compiled! '$1' moved to '$outdir' folder"
     fi
 }
 
@@ -19,32 +22,66 @@ runJava() {
 
 usage() {
     while read -r line; do
-        echo $line
-    done << EOF
+        echo "$line"
+    done <<EOF
+    ### RUNJAVA V$version ###
     ### This file is created for the ease of compiling a java file and move it to the 'outdir'
     ### The 'outdir' is the 'classFiles' folder
     ### Rather than that this file has no use
 
     USAGE:
-        1) To run this file ->
-        ./runjava.sh ARG FILENAME
+        0) To run this file ->
+        ./{0##*/} FILENAME OPTION
         
-        - FILENAME: The file name of the java file
-        - ARG: Takes one argument of either -c for compile or -h for help
+        - FILENAME: Name of the java file
+        - ARG: One of these four options [-a] [-c] [-h] [-r]
 
-        2) To compile a java file ->
-        type ./runjava.sh file_name.java -c
-        The compiled class file will be moved to the 'outdir' (classFiles)
+    OPTIONS:
+        -a or --all -> Compile all the java files in present directory
+        -c or --compile -> Compile given java file as FILENAME
+        -h or --help -> See the manual page
+        -r or --run -> Compile and run the given java file as FILENAME at the same time
 
-        3) To run java (class) file ->
-        type ./runjava.sh file_name
+    HOW TO RUN:
+        # To compile a java file ->
+        type ./${0##*/} file_name.java -c
+        The compiled class file will be moved to the 'outdir' (classFiles) folder
+
+        # To run java (class) file ->
+        type ./${0##*/} file_name
         *NOTE: .class extension is optional, program will add if not present on the argument
+
+        # To compile and run a java file ->
+        type ./${0##*/} file_name.java -r
+
+        # To compile all the java files at the same time (but don't run them) ->
+        type ./${0##*/} -a
+
+        # To set a different folder for .class files ->
+        type ./${0##*/} -s FolderName
+        *NOTE: If the above command is not set then the DEFAULT folder is 'classFiles'
 EOF
 }
 
-[ $# -eq 0 ] && usage
+setOutdir() {
+    echo $1 > .outdir
+    mkdir $1
+}
+
+options=$(getopt -o "achrs:" -l "all, compile, help, run, set:" -- "$@")
+[ $# -eq 0 ] && usage && exit
+eval set -- $options
+
+param=""
+for params do
+    param=$params
+done
+
 case $1 in
-    -c|--compile) compileFile $2;;
-    -h|--help|-*|--*) usage;;
-    *) runJava $1;;
+    -a|--all) for fname in $(ls ./*.java); do compileFile $fname; done;;
+    -c|--compile) compileFile $param;;
+    -h|--help) usage;;
+    -r|--run) compileFile $param && runJava ${param%%.*};;
+    -s|--set) setOutdir $2 && exit;;
+    *) runJava ${param%%.*};;
 esac
