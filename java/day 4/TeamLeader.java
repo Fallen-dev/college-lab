@@ -65,8 +65,8 @@ class TeamLeader extends ProdunctionWorker {
 class MyTeamLeader {
     public static void main(String[] args) {
         TeamLeader tl = new TeamLeader();
-        tl.employee("Peter", "999-D", "01.05.2012")
-                .shifting(1).payRate(3000.00).display();
+        tl.employee("Peter", "434-E", "01.05.2012")
+                .shifting(2).payRate(3000.00).display();
         tl.bonus(1200).training(6, 6).displayTL();
     }
 }
