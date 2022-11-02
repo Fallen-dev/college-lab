@@ -1,5 +1,5 @@
 #!/bin/bash
-version=1.0.4
+version=1.5
 
 [ ! -e .outdir ] && outdir=classFiles || outdir=$(cat .outdir)
 
@@ -31,7 +31,7 @@ usage() {
 
     USAGE:
         0) To run this file ->
-        ./{0##*/} FILENAME OPTION
+        ./${0##*/} FILENAME OPTION
         
         - FILENAME: Name of the java file
         - ARG: One of these five options [-a] [-c] [-h] [-r] [-s]

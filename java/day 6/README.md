@@ -23,31 +23,41 @@ The `runjava` is only for automate task and NOT related to the assignment.
 
 **YOU NEED BASH/SH TO USE RUN THIS PROGRAM ON TERMINAL**
 
-##### USAGE
+    ### RUNJAVA V$version
+    > This file is created for the ease of compiling a java file and move it to the 'outdir'
+    > The 'outdir' is the 'classFiles' folder
+    > Rather than that this file has no use
 
-runjava ARG FILE
+    ### USAGE
+        0) To run this file ->
+        ./runjava FILENAME OPTION
 
--   Two arguments `-c` for compile or `-h` for help
--   FILE = filename
+        FILENAME: Name of the java file
+        ARG: One of these five options [-a] [-c] [-h] [-r] [-s]
 
-The class file will be moved to `classFile` folder automatically
+    ### OPTIONS
+        -a or --all -> Compile all the java files in present directory
+        -c or --compile -> Compile given java file as FILENAME
+        -h or --help -> See the manual page
+        -r or --run -> Compile and run the given java file as FILENAME at the same time
+        -s or --set -> Set folder for .class files (default is 'classFiles')
 
-##### Compiling a java file
+    ### HOW TO RUN
+        - To compile a java file ->
+        type ./runjava file_name.java -c
+        The compiled class file will be moved to the 'outdir' (classFiles) folder
 
-```bash
-./runjava -c WordCount.java
-```
+        - To run java (class) file ->
+        type ./runjava file_name
+        *NOTE: .class extension is optional, program will add if not present on the argument
 
-##### Running a file
+        - To compile and run a java file ->
+        type ./runjava file_name.java -r
+        > This option is recommended to use most of the time
 
-```bash
-./runjava WordCount
-```
+        - To compile all the java files at the same time (but don't run them) ->
+        type ./runjava -a
 
-> You don't need to add the _.class_ extension it will automatically add it if not
-
-##### For help
-
-```bash
-./runjava -h
-```
+        - To set a different folder for .class files ->
+        type ./runjava -s FolderName
+        *NOTE: If the above command is not set then the DEFAULT folder is 'classFiles'
