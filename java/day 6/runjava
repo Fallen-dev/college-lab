@@ -34,14 +34,21 @@ usage() {
         ./{0##*/} FILENAME OPTION
         
         - FILENAME: Name of the java file
+<<<<<<< HEAD
         - ARG: One of these five options [-a] [-c] [-h] [-r] [-s]
+=======
+        - ARG: One of these four options [-a] [-c] [-h] [-r]
+>>>>>>> 65dc1dd48d678be1e592579a6c48b6af8e7b6c66
 
     OPTIONS:
         -a or --all -> Compile all the java files in present directory
         -c or --compile -> Compile given java file as FILENAME
         -h or --help -> See the manual page
         -r or --run -> Compile and run the given java file as FILENAME at the same time
+<<<<<<< HEAD
         -s or --set -> Set folder for .class files (default is 'classFiles')
+=======
+>>>>>>> 65dc1dd48d678be1e592579a6c48b6af8e7b6c66
 
     HOW TO RUN:
         # To compile a java file ->
