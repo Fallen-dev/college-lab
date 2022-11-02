@@ -6,7 +6,7 @@ class HighestFrequencyWord {
         int count, maxCount;
 
         System.out.print("Enter a sentence :: ");
-        String[] input = read.nextLine().split(" ");
+        String[] input = read.nextLine().split("");
 
         read.close();
         int inputLen = input.length;
@@ -25,7 +25,7 @@ class HighestFrequencyWord {
                 }
             }
             if (count > maxCount)
-                System.out.printf("\"%s\" occurs the most at %d times\n", input[i], count + 1);
+                System.out.printf("\"%s\" occurs the most at %d times\n", input[i], count);
             count = 0;
         }
     }
