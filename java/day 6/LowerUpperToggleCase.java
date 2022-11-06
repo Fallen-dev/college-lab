@@ -22,3 +22,10 @@ class LowerUpperToggleCase {
                 toToggleCase(string));
     }
 }
+
+/*
+ * OUTPUT
+ * Lower case :: this is a string
+ * Upper case :: THIS IS A STRING
+ * Toggle case :: tHIS IS A sTRING
+ */

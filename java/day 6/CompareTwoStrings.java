@@ -23,3 +23,15 @@ public class CompareTwoStrings {
             log("Not equal\n");
     }
 }
+
+/*
+ * OUTPUT
+ * 1.
+ * Enter first string :: morning
+ * Enter second string :: night
+ * Not equal
+ * 2.
+ * Enter first string :: morning
+ * Enter second string :: morning
+ * Equal
+ */

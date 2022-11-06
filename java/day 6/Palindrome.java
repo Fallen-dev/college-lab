@@ -13,3 +13,7 @@ class Palindrome {
         System.out.println(isPalindrome("Malayalam"));
     }
 }
+/*
+ * OUTPUT
+ * Palindrome
+ */

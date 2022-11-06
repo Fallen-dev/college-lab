@@ -7,3 +7,8 @@ public class OccurenceOfChar {
                 find, string.length() - string.replace(find, "").length());
     }
 }
+
+/*
+ * OUTPUT
+ * No. of occurence of char 'a' is 3
+ */

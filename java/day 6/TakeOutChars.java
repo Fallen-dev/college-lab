@@ -18,3 +18,8 @@ class TakeOutChars {
         takeOutChars(input);
     }
 }
+/*
+ * OUTPUT
+ * Enter a sentence more than 10 letters :: It is a beautiful day
+ * is a b
+ */

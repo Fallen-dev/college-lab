@@ -9,3 +9,9 @@ class WordCount {
         read.close();
     }
 }
+
+/*
+ * OUTPUT
+ * Enter a sentence: Debdutta roy
+ * The length is 11
+ */

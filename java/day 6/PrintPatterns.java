@@ -37,3 +37,22 @@ class PrintPatterns {
         b(string);
     }
 }
+
+/*
+ * OOUTPUT
+ * H
+ * HE
+ * HEL
+ * HELL
+ * HELLO
+ * 
+ * H
+ * H E
+ * H E L
+ * H E L L
+ * H E L L O
+ * H E L L
+ * H E L
+ * H E
+ * H
+ */

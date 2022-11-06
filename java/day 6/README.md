@@ -4,7 +4,7 @@
 -   Q-2 WordCount.java
 -   Q-3 DoubleToString.java
 -   Q-4 CheckCharAndDigits.java
--   Q-5
+-   Q-5 SuffixString.java
 -   Q-6 CompareTwoStrings.java
 -   Q-7 CheckAInString.java
 -   Q-8 StringStartsWithSubstring.java

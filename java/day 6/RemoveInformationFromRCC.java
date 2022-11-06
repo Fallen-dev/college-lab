@@ -4,3 +4,7 @@ class RemoveInformationFromRCC {
         System.out.println(string.replace("Information", ""));
     }
 }
+/*
+ * OUTPUT
+ * RCC Institute of Technology
+ */

@@ -6,3 +6,7 @@ public class InsertCharAtBeginning {
         System.out.println(subString + string);
     }
 }
+/*
+ * OUTPUT
+ * This is a test
+ */

@@ -30,3 +30,8 @@ class HighestFrequencyWord {
         }
     }
 }
+/*
+ * OUTPUT
+ * Enter a sentence :: once in a blue moon
+ * "o" occurs the most at 3 times
+ */

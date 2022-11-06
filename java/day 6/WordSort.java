@@ -20,3 +20,11 @@ class WordSort {
             System.out.printf("%s ", words[i]);
     }
 }
+
+/*
+ * OUTPUT
+ * Enter some words or a sentence ->
+ * Java program day 6
+ * Sorted order ->
+ * 6 Java day program
+ */

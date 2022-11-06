@@ -5,3 +5,8 @@ class StringStartsWithSubstring {
         System.out.println(sentence.startsWith(specifiedSubstring));
     }
 }
+
+/*
+ * OUTPUT
+ * true
+ */

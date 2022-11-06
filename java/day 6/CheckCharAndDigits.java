@@ -38,3 +38,16 @@ class CheckCharAndDigits {
         }
     }
 }
+
+/*
+ * OUTPUT
+ * 1.
+ * Word :: TwentyTwo
+ * Contains chars only
+ * 2.
+ * Word :: 22
+ * Contains only digit
+ * 3.
+ * Word :: Twenty2
+ * Contains both digit and chars
+ */
